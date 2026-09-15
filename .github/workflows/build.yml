@@ -1,0 +1,43 @@
+name: Windows 실행파일 만들기
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - package.json
+      - package-lock.json
+      - main.js
+      - preload.js
+      - .github/workflows/build.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 소스 받기
+        uses: actions/checkout@v4
+
+      - name: Node.js 준비
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 필요한 파일 설치
+        run: npm install --no-audit --no-fund
+
+      - name: Windows 실행파일 만들기
+        run: npm run build
+
+      - name: 실행파일 보관
+        uses: actions/upload-artifact@v4
+        with:
+          name: PROMO_CORE_윈도우용
+          path: dist/PROMO_CORE_윈도우용.exe
+          if-no-files-found: error
+          retention-days: 30

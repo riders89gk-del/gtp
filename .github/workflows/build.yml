@@ -14,7 +14,7 @@ on:
       - .github/workflows/build.yml
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-windows:
@@ -43,3 +43,11 @@ jobs:
           path: dist/PROMO_CORE_윈도우용.exe
           if-no-files-found: error
           retention-days: 30
+
+      - name: 직원용 다운로드 공개
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create windows-v1.0.2 "dist/PROMO_CORE_윈도우용.exe" --title "PROMO CORE Windows 1.0.2" --notes "직원용 Windows 실행파일입니다. 다운로드 후 파일 하나만 실행하세요."

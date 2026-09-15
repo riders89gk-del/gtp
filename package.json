@@ -1,6 +1,6 @@
 {
   "name": "promo-core-windows",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "PROMO CORE 배민 자동수집",
   "main": "main.js",
   "scripts": {
@@ -19,7 +19,7 @@
     ],
     "win": {
       "target": "portable",
-      "artifactName": "PROMO_CORE_윈도우용.exe"
+      "artifactName": "PROMO_CORE_Windows.exe"
     }
   }
 }

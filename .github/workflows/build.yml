@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: PROMO_CORE_윈도우용
-          path: dist/PROMO_CORE_윈도우용.exe
+          path: dist/PROMO_CORE_Windows.exe
           if-no-files-found: error
           retention-days: 30
 
@@ -50,4 +50,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create windows-v1.0.2 "dist/PROMO_CORE_윈도우용.exe" --title "PROMO CORE Windows 1.0.2" --notes "직원용 Windows 실행파일입니다. 다운로드 후 파일 하나만 실행하세요."
+          gh release create windows-v1.0.3 "dist/PROMO_CORE_Windows.exe" --title "PROMO CORE Windows 1.0.3" --notes "직원용 Windows 실행파일입니다. 다운로드 후 파일 하나만 실행하세요."

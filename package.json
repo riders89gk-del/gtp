@@ -1,1 +1,25 @@
-{"name":"promo-core-windows","version":"1.0.0","description":"PROMO CORE 배민 자동수집","main":"main.js","scripts":{"build":"electron-builder --win portable"},"devDependencies":{"electron":"^38.0.0","electron-builder":"^26.0.12"},"build":{"appId":"kr.co.riderpayments.promocore","productName":"PROMO CORE","files":["main.js","preload.js"],"win":{"target":"portable","artifactName":"PROMO_CORE_윈도우용.exe"}}}
+{
+  "name": "promo-core-windows",
+  "version": "1.0.1",
+  "description": "PROMO CORE 배민 자동수집",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "kr.co.riderpayments.promocore",
+    "productName": "PROMO CORE",
+    "files": [
+      "main.js",
+      "preload.js"
+    ],
+    "win": {
+      "target": "portable",
+      "artifactName": "PROMO_CORE_윈도우용.exe"
+    }
+  }
+}
